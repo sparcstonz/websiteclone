@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K5VPQJGD');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy</title>
+     <link rel="icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="footer.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        
+        .banner-academy {
+          background:url('images/homebaner-index.png');
+            height: 95vh;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+            padding-top: 70px;
+            position:relative;
+        }
+        .bannercontent-mobile{
+            z-index:100;
+        }
+       .form-container {
+    background: #ffffff9e;
+    background: linear-gradient(2deg, rgb(255 255 255) 10%, rgb(255 255 255) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    color: #079ca3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+        label{
+            text-align: left;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .form-group{
+            text-align: left;
+        }
+        .form-control{
+            border-radius:0px !important;
+        }
+     .submit-btn {
+    background: #a9eaef;
+    background: linear-gradient(2deg, rgba(2, 141, 152, 1) 10%, rgba(57, 224, 237, 1) 100%);
+    color: #ffffff;
+    width: 100%;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Hover effect */
+.submit-btn:hover {
+    background: #02AAB7;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Click effect */
+.submit-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.training {
+    text-align: center;
+    padding: 20px;
+}
+
+.training-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.training-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.training-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.training-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.training-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.training-info h5 {
+    font-size: 15px;
+    font-weight: bold;
+    color: gray;
+   
+}
+.banner-title{
+    text-align: justify;
+}
+.banner-title h2{
+    text-shadow: 1px 1px 5px rgb(0 79 103);
+}
+.subcontent-acedamy{
+    text-shadow: 1px 1px 5px rgb(0 79 103);
+}
+.image-container{
+    height: 250px;
+    width: 250px;
+}
+ul,li{
+    list-style: none;
+    text-align: justify;
+}
+.feature-box {
+    width: 80px;
+    margin-left: 20px;
+    align-content: center;
+        }
+        .feature-box img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .flexall{
+            margin-top: 50px;
+        }
+       .flex-list{
+        margin-bottom: 10px;
+       }
+       .mainImg-flex{
+        border-radius: 25px;
+    padding: 5px;
+    /* border: 1px outset red; */
+    border: 2px dotted #00a59d;
+       }
+       .main-box-container{
+                background: #e3e3e3;
+                padding: 5px;
+                border-radius: 25px;
+       }
+       .moredetails{
+        background: #006065;
+    border: 1px solid rgb(2, 141, 152) !important;
+    font-size: 15x !important;
+    font-weight: 500 !important;
+    color: white !important;
+    width: 100%;
+       }
+       .companies-container {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            margin-top: 20px;
+        }
+        .companies-container h4 {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .company-logo {
+            max-width: 120px;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            filter: grayscale(50%);
+            padding: 10px;
+        }
+        .company-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        .company-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .training  {
+            background-color:#d3d3d370;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .icon {
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            color: #fff;
+            display: inline-block;
+        }
+        .span-word{
+    color:#079ca3;
+    font-size:35px;
+}
+        .icon.devops { background-color: #ff5722; } /* Orange */
+        .icon.aws { background-color: #4caf50; } /* Green */
+        .icon.azure { background-color: #009999; } /* Green */
+        .icon.cloud { background-color: #012999 ;}
+        .icon.crm { background-color: #000925;}
+        .icon.k8s { background-color: #3f51b5; } /* Blue */
+        .icon.fullstack { background-color: #ff9800; } /* Amber */
+        .icon.networking { background-color: #009688; } /* Teal */
+        .icon.photoshop { background-color: #673ab7; } /* Purple */
+         @media only screen and (max-width: 768px) {
+                 html,
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+             .banner-academy {
+                 height:auto;
+             }
+             .bannercontent-mobile{
+                 margin-top:50px;
+                 margin-bottom:40px;
+             }
+             .subcontent-acedamy{
+                 font-size: 0.95rem;
+             }
+             .image-container {
+    height: 170px;
+    width: 170px;
+}
+ul{
+    padding-left:0px !important;
+}
+.mainImg-flex {
+    border-radius: 25px;
+    padding: 5px;
+    height: 300px;
+    /* margin-bottom: 10px; */
+    /* border: 1px outset red; */
+    border: 2px dotted #00a59d;
+}
+     
+     .main-box-container {
+    background: #e3e3e3;
+    padding: 5px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.review-card{
+    margin-bottom:10px;
+}
+.card-list .card-item .card-link{
+    height:auto;
+}
+         }
+         
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   
+      
+}
+
+.circles li{
+   position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background:#f4f5f594;
+    animation: animate 15s linear infinite;
+    bottom: -50px;
+       
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 80px;
+    
+    height: 80px;
+    animation-delay: 3s;
+}
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1500px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5VPQJGD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="headerbox container header-menu">
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                     <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link menuactive" href="academy.html">Academy</a></li>
+                     <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Courses
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                <li><a class="dropdown-item" href="aws3.html">AWS</a></li>
+                <li><a class="dropdown-item" href="devops.html">DEVOPS</a></li>
+                <li><a class="dropdown-item" href="digitalcourse.html">Digital Marketing Course</a></li>
+                <li><a class="dropdown-item" href="azurecloud.html">AZURE Cloud services</a></li>
+                <li><a class="dropdown-item" href="gcp.html">Google Cloud Platform</a></li>
+                <li><a class="dropdown-item" href="sales.html">Sales Force</a></li>
+                <li><a class="dropdown-item" href="mernstack.html">MERN STACK</a></li>
+            </ul>
+        </li>
+        <!-- End Courses Dropdown -->
+
+                  
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="contact-info d-flex">
+                    <img src="images/phone.png" alt="Phone" class="header-icon"> <span class="number-header">+91-9994871924 / +918925799269</span>
+                      <a href="https://1297.3cx.cloud/sparcstonz" class="btn ms-4 enquiry-btn" target="_blank">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="academy-container">
+        <div class="banner-academy">
+          <div class="container row bannercontent-mobile">
+            <div class="col-lg-7 banner-title animate__animated animate__fadeInLeft animate__slow">
+              <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Unlock Your Tech Future!</h2>
+              <h5 class="subcontent-acedamy  ">Experience our program for FREE and  take the <br> first step toward success! 🚀</h5>
+              <div class="image-container d-flex">
+                <img src="images/academybanner.png" width="100%">
+                <img src="images/banner2.png" width="100%">
+              </div>
+                
+            </div>
+            <div class="col-lg-5 form-container animate__animated animate__fadeInRight animate__slow">
+                <h4>Book a live class for Free!</h4>
+               <form id="whatsappForm">
+    <div class="form-group">
+        <fieldset>
+            <label>Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="text" class="form-control" id="number" name="number" placeholder="Enter Your Mobile Number" required>
+    </div>
+    <div class="form-group">
+        <label>Email ID</label>
+        <input type="email" class="form-control" id="mail" name="mail" placeholder="Enter Your Email Id" required>
+    </div>
+    <button type="submit" class="btn submit-btn mt-3">SUBMIT</button>
+</form>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get input values
+    var name = document.getElementById("name").value;
+    var number = document.getElementById("number").value;
+    var mail = document.getElementById("mail").value;
+
+    // Construct WhatsApp message
+    var message = `Hello, I would like to Enquire.\n\n*Name:* ${name}\n*Mobile:* ${number}\n*Email:* ${mail}`;
+
+    // Encode message for URL
+    var encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp API link
+    var whatsappURL = `https://wa.me/919994871924?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.location.href = whatsappURL;
+});
+</script>
+
+            </div>
+          </div>
+        </div>
+        <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+        <div class="training">
+            <h3 class="text-center"><span class="span-word">Our</span> Available  Trainings</h3>
+           
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <img src="images/devo1.png" class="card-img-top" alt="DevOps">
+                            <div class="card-body">
+                                <span class="icon devops">🔧</span>
+                                <h5 class="card-title mt-2">DevOps Advance & Beginner</h5>
+                                <p class="card-text">Master DevOps tools & CI/CD pipelines with hands-on training.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <img src="images/aws2.jpg" class="card-img-top" alt="AWS">
+                            <div class="card-body">
+                                <span class="icon aws">☁️</span>
+                                <h5 class="card-title mt-2">AWS Associate & Professional</h5>
+                                 <p class="card-text">Learn AWS Cloud Computing & prepare for certifications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+    <div class="card p-3">
+        <img src="images/azure4.jpg" class="card-img-top" alt="Azure">
+        <div class="card-body">
+            <span class="icon azure">☁️</span>
+            <h5 class="card-title mt-2">Azure Cloud Services</h5>
+           <p class="card-text">Master Microsoft Azure, deploy real-world projects & prepare for certifications.</p>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card p-3">
+        <img src="images/cloud.png" class="card-img-top" alt="GCP">
+        <div class="card-body">
+            <span class="icon cloud">☁️</span>
+            <h5 class="card-title mt-2">Google Cloud Platform (GCP)</h5>
+            <p class="card-text">Learn cloud computing, storage, and GCP certification essentials.</p>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card p-3">
+        <img src="images/sales3.jpg" class="card-img-top" alt="Salesforce">
+        <div class="card-body">
+            <span class="icon crm">💼</span>
+            <h5 class="card-title mt-2">Salesforce CRM</h5>
+            <p class="card-text">Master Salesforce CRM, automation tools, and app development basics.</p>
+        </div>
+    </div>
+</div>
+
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <img src="images/kubernetes2.png" class="card-img-top" alt="Kubernetes">
+                            <div class="card-body">
+                                <span class="icon k8s">📦</span>
+                                <h5 class="card-title mt-2">Containerization on Kubernetes</h5>
+                                <p class="card-text">Deploy & manage scalable apps using Docker & Kubernetes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <img src="images/developer.png" class="card-img-top" alt="Full Stack">
+                            <div class="card-body">
+                                <span class="icon fullstack">💻</span>
+                                <h5 class="card-title mt-2"> MERN Stack Development</h5>
+                              <p class="card-text">Learn frontend & backend technologies to build web applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <img src="images/aws3.png" class="card-img-top" alt="Networking">
+                            <div class="card-body">
+                                <span class="icon networking">🌐</span>
+                                <h5 class="card-title mt-2">Networking Fundamentals & CCNA</h5>
+                                <p class="card-text">Understand network design, security, & CCNA certification prep.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-3">
+                            <img src="images/photoshop1.png" class="card-img-top" alt="Photoshop">
+                            <div class="card-body">
+                                <span class="icon photoshop">🎨</span>
+                                <h5 class="card-title mt-2">Photoshop</h5>
+                                <p class="card-text">Learn graphic design & photo editing techniques in Photoshop.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+    </section>
+
+
+    <section class="flexible-container container mt-3">
+        <h4 class="text-center mb-5"><span class="span-word">We</span> have designed a flexible program for you</h4>
+
+        <div class="row  flexall">
+            <div class="col-sm-4">
+               <div class="">
+                <ul>
+                    <li class="flex-list">
+
+                   
+                <div class="d-flex">
+                    <div>
+                        <h5>Missed a class?</h5>
+                        <p>Watch the recording later, with teaching assistants available to solve your doubts</p>
+                    </div>
+                   
+                    <div class="feature-box">
+                     
+                    <img src="images/video (3).png" ></div>
+                </div>
+            </li>
+            <li class="flex-list">
+
+                   
+                <div class="d-flex">
+                    <div>
+                        <h5>Work/family needs time?</h5>
+                        <p>Pause your course and restart a month later with the next batch!</p>
+                    </div>
+                   <div class="feature-box"> <img src="images/study-group.png" ></div>
+                </div>
+            </li>
+            <li class="flex-list">
+
+                   
+                <div class="d-flex">
+                    <div>
+                        <h5>Jobs & class timings clash?</h5>
+                        <p>Decide your ideal class timing together with your classmates</p>
+                    </div>
+                    <div class="feature-box"><img src="images/deadline (1).png"></div>
+                </div>
+            </li>
+        </ul>
+               </div>
+            </div>
+            <div class="col-sm-4 ">
+                <div class="main-box-container">
+                    <img src="images/flexible.png" width="100%" class="mainImg-flex">
+                </div>
+             
+            </div>
+            <div class="col-sm-4">
+                <div class="">
+                 <ul>
+                     <li class="flex-list">
+ 
+                    
+                 <div class="d-flex">
+                    <div>
+                        <h5>Want to revise?</h5>
+                        <p>Access assignments/notes lifelong and recordings upto 6 months post course completion</p>
+                    </div>
+                     <div class="feature-box"> <img src="images/revision (1).png" ></div>
+                 </div>
+             </li>
+             <li class="flex-list">
+ 
+                    
+                 <div class="d-flex">
+                    <div>
+                        <h5>Have doubts?</h5>
+                        <p>Get them resolved over text / video by our expert teaching assistants!</p>
+                    </div>
+                     <div class="feature-box"> <img src="images/mind (1).png"></div>
+                 </div>
+             </li>
+             <li class="mt-5">
+                <button class="btn moredetails">More Details &nbsp;  <i class="fa fa-arrow-circle-right"></i>  </button>
+             </li>
+            
+         </ul>
+                </div>
+             </div>
+        </div>
+    </section>
+    <section class="review-section mt-5">
+        <h4 class="text-center mb-3">Discover & connect with Alumni who have walked the same path as you</h4>
+
+        <div class="swiper mt-3">
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/venkatesan.jpg" class="card-image">
+                            <p class="badge">Venkatesan SG</p>
+                            <h2 class="card-title">Course content was good and their explanation with real world scenarios are awesome. Devops really helped for the placement in MNCs.</h2>
+                           <div class="mt-2">
+                            <img src="./images/suitcase.png" width="20">
+                              <span class="spanName">
+                                Cognizant Technology 
+                            </span>
+                           </div>
+                        
+                            <div class="mt-2"> 
+                               <img src="./images/mail.png" width="20">
+                               <span class="spanName">
+                                  venkatesansg111@gmail.com
+                                </span>
+                            </div>
+                            <a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>
+                        </div>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/barathan.jpg" class="card-image">
+                            <p class="badge">Barathan</p>
+                            <h2 class="card-title">Awesome person, This course is very well prepared and has a lot of hands on, which in my opinion, is the best way to learn. It was very helpful especially for beginners who wanted to know about the cloud and DevOps. I really thank Aravind for making this course and it was very helpful n insightful.</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                    Dot Com Infoway Limited
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                    barathanbar@gmail.com
+                                    </span>
+                                </div>
+                            <a  class="card-button" href="https://www.linkedin.com/in/barathanug/"><img src="./images/linkedin.png" width="20" class="mx-2">/barathanug</a>
+                        </div>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/sivakumar.jpg" class="card-image">
+                            <p class="badge">Dr. Sivakumar</p>
+                           
+                            <h2 class="card-title">I have taken AWS course. Training was excellent with good interaction. Knowledge sharing is good. Recording facility is excellent for revising. Course was practically and informative. Aravind sir is enthusiastic and really aware of what he is explaining. The course helped to build confidence, Valuable experiences and learning.</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                    Jain University
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                    drsivakumar.nadarajan@gmail.com
+                                    </span>
+                                </div>
+                           
+                          <!--  <a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>-->
+                        </div>
+                    </li>
+                     <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/default-male.png" class="card-image">
+                            <p class="badge">Ramprasath</p>
+                           
+                            <h2 class="card-title">I highly recommend the DevOps class to anyone looking to bridge the gap between development and operations. The course not only covers the technical aspects but also emphasizes the cultural shift necessary for successful DevOps adoption. Truly transformative!</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                   Sopra serial Pte ltd Singapore
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                   votupodu@gmail.com
+                                    </span>
+                                </div>
+                           
+                            <!--<a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>-->
+                        </div>
+                    </li>
+                   <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/default-female.png" class="card-image">
+                            <p class="badge">Kavya T</p>
+                           
+                            <h2 class="card-title">Excellent!</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                    Tech Mahindra
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                   kavyajas27@gmail.com
+                                    </span>
+                                </div>
+                           
+                            <a  class="card-button" href="https://www.linkedin.com/in /kavya-tulsiram/"><img src="./images/linkedin.png" width="20" class="mx-2"> /kavya-tulsiram</a>
+                        </div>
+                    </li>
+                 
+                    <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/default-male.png" class="card-image">
+                            <p class="badge">Kola Aradhana</p>
+                           
+                            <h2 class="card-title">It was of the best real time courses.</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                    LTI Mindtree
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                   aradhanakola66@gmail.com
+                                    </span>
+                                </div>
+                           
+                        <!--    <a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>-->
+                        </div>
+                    </li>
+                   <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/default-male.png" class="card-image">
+                            <p class="badge">Purnoor Bawa</p>
+                           
+                            <h2 class="card-title">Brilliant teaching, intelligent and brilliant course.</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                   NHS
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                   purnoorbawa@yahoo.com
+                                    </span>
+                                </div>
+                           
+                           <!-- <a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>-->
+                        </div>
+                    </li>
+                   <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/default-male.png" class="card-image">
+                            <p class="badge">Hari</p>
+                           
+                            <h2 class="card-title">I started the course as a fresher. The way of teaching is very understable. Also I got some course documents also for further training and learning purpose. Thank you.</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                   Euromax Electronics
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                    harirao1993@gmail.com
+                                    </span>
+                                </div>
+                           
+                           <!-- <a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>-->
+                        </div>
+                    </li>
+                         <li class="card-item swiper-slide">
+                        <div class="card-link">
+                            <img src="./images/hari.jpg" class="card-image">
+                            <p class="badge">Hari Vinoth Kumar</p>
+                           
+                            <h2 class="card-title">Excellent!</h2>
+                            <div class="mt-2">
+                                <img src="./images/suitcase.png" width="20">
+                                  <span class="spanName">
+                                   Tech Mahindra
+                                    
+                                </span>
+                               </div>
+                            
+                                <div class="mt-2">
+                                   <img src="./images/mail.png" width="20">
+                                   <span class="spanName">
+                                   hari.vinoth@hgmail.com
+                                    </span>
+                                </div>
+                           
+                           <!-- <a  class="card-button" href="https://www.linkedin.com/in/venkatesansg/"><img src="./images/linkedin.png" width="20" class="mx-2">venkatesansg</a>-->
+                        </div>
+                    </li>
+                </ul>
+        
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <section class="companies-container text-center">
+        <div class="container">
+            <h4><span class="span-word">Our</span> alumni work at reputed Technology companies and promising startups</h4>
+            
+            <div class="company-grid">
+                <img src="images/aspire.png" class="company-logo">
+                <img src="images/hcl.png" class="company-logo">
+                <img src="images/infosys.png" class="company-logo">
+                <img src="images/tcs.png" class="company-logo">
+                <img src="images/tech-mahindra.png" class="company-logo">
+                <img src="images/wipro.png" class="company-logo">
+            </div>
+        </div>
+    </section>
+   <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="widget1">
+                        <div class="logo">
+                            <img src="./images/logo.png" class="img-fluid footerlogo" alt="">
+                        </div>
+                       
+                        <div class="socialLinks">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=61573193537672" target="blank">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/sparcstonz.com_?igsh=ajJoeTdlMnJodWo5" target="blank">
+                                       <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/100317420/admin/inbox/" target="blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCWyt9iKlt9jPFU36cAu0cbA" target="blank">
+                                      <i class="fa fa-youtube-play"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-sm-6 col-lg-2">
+                    <div class="widget3">
+                        <h5>
+                            Quick Links
+                        </h5>
+                        <ul>
+                            <li>
+                                <a href="index.html">
+                                    Home
+                                </a>
+                            </li>
+                             <li>
+                                <a href="about.html">
+                                   About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="academy.html">
+                                    Academy 
+                                </a>
+                            </li>
+                           
+                            <li>
+                                <a href="contact.html">
+                                   Contact 
+                                </a>
+                            </li>
+                           
+                           
+                        </ul>
+                    </div>
+                </div>
+               
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget4">
+                        <h5>
+                            Stay Connected
+                        </h5>
+                        <ul>
+                            <li>
+                               
+                                <a href="#"> <img src="images/telephone-call (1).png" width="20"> +91-9994871924 / +918925799269 </a>
+                               
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/email (1).png" width="20">  support@sparcstonz.tech
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/gps.png" width="20"> 
+                                    Door Number 62,<br>
+                                    Ragam Complex,<br>
+                                    Tirupparankunram Rd,<br>
+                                    near Tamilnadu polytechnic college,<br>
+                                    Periyar, Subramaniapuram, <br>
+                                    Madurai- 625011
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.296412811941!2d78.10786387479237!3d9.909252390191556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf809b542901%3A0xc10c0f6929b68456!2sRagam%20Complex%2C%20Polytechnic%20Ln%2C%20Subramaniapuram%2C%20Madurai%2C%20Tamil%20Nadu%20625011!5e0!3m2!1sen!2sin!4v1745301392703!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyRightArea">
+            <div class="container">
+                     <div class="row">
+                        <div class="col-sm-6 text-center">
+                            <p>&copy; Copyright All rights reserved.</p>
+                        </div>
+                         <div class="col-sm-6 text-center">
+                            <p>&copy; Designed By Aristostech India Private Limited.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        new Swiper('.card-wrapper', {  
+      loop: true,  
+      speed: 700,  
+      spaceBetween: 30,  
+    
+      // If we need pagination  
+      pagination: {  
+        el: '.swiper-pagination',  
+        clickable: true,  
+        dynamicBullets: true,  
+      },  
+    
+      // Navigation arrows  
+      navigation: {  
+        nextEl: '.swiper-button-next',  
+        prevEl: '.swiper-button-prev',  
+      },  
+      
+      breakpoints: { 
+        0: {  
+          slidesPerView: 1  
+        },  
+        768: {  
+          slidesPerView: 2  
+        },  
+        1024: {  
+          slidesPerView: 4
+        },  
+      }  
+    });  
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

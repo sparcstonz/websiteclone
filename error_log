@@ -1,0 +1,2 @@
+[10-Feb-2025 10:12:09 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'uow88zl1ngcx_sparcstonz'@'localhost' (using password: YES) in /home/uow88zl1ngcx/public_html/connection.php on line 9
+[10-Feb-2025 10:12:09 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/uow88zl1ngcx/public_html/connection.php on line 12

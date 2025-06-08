@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration - Sparcstonz</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87ceeb;
+            margin: 0;
+            padding: 20px;
+        }
+        .box {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  h1 {
+    color: #B22222;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #8B0000;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h2 span {
+    color: orange;
+    font-weight: bold;
+  }
+
+  p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .pay-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .pay-btn:hover {
+    background-color: #004494;
+  }
+
+  .powered {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+  }
+
+  .powered b {
+    font-style: normal;
+  }
+   .course-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 5px solid #1e90ff; /* solid blue border */
+    background-image: linear-gradient(to bottom right, #ffffff, #e6f2ff); /* slight blueish gradient inside */
+}
+
+        h1, h2 {
+            color: #8B0000;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+       /* Styling the container of the pay button */
+.pay-button {
+    text-align: center; /* Centers the button and text */
+    margin: 20px 0; /* Adds some margin for spacing */
+    animation: fadeIn 1s ease-in-out; /* Animation for fade-in effect */
+}
+
+/* Keyframe animation for fading in the container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styling the pay now button */
+.pay-button button {
+    background-color: #1e90ff; /* Blue background */
+    color: white; /* White text */
+    padding: 12px 25px; /* Add padding for a better button size */
+    font-size: 18px; /* Font size of the button text */
+    border: none; /* Remove default button borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    transition: all 0.3s ease; /* Smooth transition for all effects */
+    transform: scale(1); /* Initial size of the button */
+}
+
+/* Hover effect for the pay now button */
+.pay-button button:hover {
+    background-color: #0b7dda; /* Darker blue when hovered */
+    transform: scale(1.1); /* Button scales up when hovered */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Animation for the "Powered by GPay QR" text */
+.payment-text {
+    font-size: 12px;
+    color: #555; /* Light grey color for text */
+    margin-top: 8px; /* Adds some space between the button and the text */
+    font-style: italic; /* Makes the text italic */
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards; /* Fade-in effect for the text */
+    animation-delay: 1s; /* Delay for text appearance */
+}
+
+/* Keyframe animation for fading in the "Powered by GPay QR" text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+        .pay-button button {
+            padding: 15px 30px;
+            background-color: #175bb5;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pay-button button:hover {
+            background-color: #d7bebe;
+        }
+        .payment-issues {
+            margin-top: 30px;
+            color: rgb(83, 26, 26);
+            font-size: 16px;
+        }
+        .details-list {
+            text-align: left;
+            margin-top: 30px;
+        }
+        .details-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .details-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            padding-left: 25px;
+        }
+        .details-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: green;
+        }
+        .registration-form {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+       
+        .qr-code {
+            display: none;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            max-width: 300px;
+        }
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Tabs */
+.tab-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    background: #555;
+}
+
+/* Course Content */
+.course-content {
+    display: none;
+}
+
+.course-content.active {
+    display: block;
+}
+
+/* Syllabus Items */
+.syllabus-item {
+    background: white;
+    margin: 10px auto;
+    padding: 15px;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.para-breif
+{
+    text-align:justify;
+}
+
+
+.module-title {
+    margin: 0;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.module-title:hover {
+    background-color: #555;
+}
+
+.module-content {
+    display: none;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grid-item {
+    background-color: #f0f8ff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #1e90ff;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.grid-item:hover {
+    background-color: #d0e7ff;
+    transform: translateY(-5px);
+}
+
+
+.glitter-text {
+    position: relative;
+    color: #ff6600;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.glitter-text::before,
+.glitter-text::after {
+    content: '✨';
+    position: absolute;
+    font-size: 18px;
+    opacity: 0;
+    animation: glitter 2s infinite;
+}
+
+.glitter-text::before {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.glitter-text::after {
+    bottom: 0;
+    right: 0;
+    animation-delay: 1s;
+}
+
+@keyframes glitter {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.2) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5) rotate(90deg);
+    }
+}
+h1,h2,p{
+    text-align: center;
+}
+.qr-code
+{
+    text-align: center;
+}
+
+.registration-form {
+    width: 400px; /* Reduced width */
+    margin: 30px auto; /* Centered horizontally */
+    padding: 20px;
+    background-color: #b3e5fc; /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registration-form h2 {
+    color: brown;
+    margin-bottom: 20px;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+
+<div class="intro">
+    <h1>New Batch Starts Soon...</h1>
+    <h2>To Join Our Sparcstonz <span class="glitter-text">Mern Stack Webdevelopment Course</span></h2>
+
+
+    <p>Register Your Class by Making a Payment Given in the Below Link</p>
+
+    <div class="pay-button">
+        <button onclick="showForm()">Pay Now</button>
+        <p class="payment-text">Powered by <b>GPay QR</b></p>
+    </div>
+    
+
+   <div class="registration-form" id="registrationForm">
+    <h2>Student Registration Form</h2>
+    <form id="studentForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="course" placeholder="Course Name">
+        
+        <div style="text-align: center;">
+            <button type="button" onclick="showQRCode()" style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 10px;">Proceed to Pay</button>
+        </div>
+    </form>
+</div>
+
+
+        </form>
+    </div>
+
+    <div class="qr-code" id="qrCode">
+        <h2>Scan & Pay via GPay</h2>
+        <img src="images/qr.jpg" alt="GPay QR Code">
+        <p>After Payment, Please send the ScreenShot To 8925799269</p>
+    </div>
+
+    <div class="details-list">
+        <h2>Special Features In Our Class</h2>
+        <div class="grid-container">
+            <div class="grid-item">Online Course</div>
+            <div class="grid-item">Live Sessions</div>
+            <div class="grid-item">30 Classes</div>
+            <div class="grid-item">1hr/Weekday Classes</div>
+            <div class="grid-item">2hr/Weekend Classes</div>
+            <div class="grid-item">Learn in Tamil</div>
+            <div class="grid-item">Flexible Timings</div>
+            <div class="grid-item">Certification Provided</div>
+            <div class="grid-item">Interview Training</div>
+            <div class="grid-item">Career Mentorship</div>
+            <div class="grid-item">Freelancing Mentorship</div>
+            <div class="grid-item">One-to-One Sessions</div>
+        </div>
+    </div>
+    <section id="syllabus">
+        <h2>Course Syllabus</h2>
+    
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+            <button class="tab-button active" onclick="showCourse('mern')">MERN STACK WEB DEVELOPEMENT COURSE SYLLABUS(Total Duration-30hrs)</button>
+           
+    
+        <!-- AWS Syllabus -->
+        <div class="course-content active" id="aws">
+            <div class="syllabus-item">
+                <h3 class="module-title">Module 1: HTML/CSS</h3>
+                <div class="module-content">
+                    <p class="para-breif">
+                       • What is HTML?<br>
+                       • Basic Structure of an HTML Document<br>
+                       • Tags, Elements & Attributes<br>
+                       • Text Formatting Tags<br>
+                       • Lists: Ordered<br>
+                       • Linking Pages<br>
+                       • Adding Images<br>
+                       • Inline, Internal & External CSS<br>
+                       • Box Model (Padding, Border, Margin)<br>
+                       • CSS Selectors
+                    </p>
+                </div>
+                
+            </div>
+            <div class="syllabus-item">
+                <h3 class="module-title">Module 2: Flexbox & Grid Layout</h3>
+                <div class="module-content">
+                    <p class="para-breif"> 
+                     • Flexbox Example Project : Blog Layout with Flexbox<br>
+                     • Media Queries<br>
+                     • Project: Responsive Landing Page
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="syllabus-item">
+            <h3 class="module-title">Module 3: Advanced CSS & Animations</h3>
+            <div class="module-content">
+                <p class="para-breif">  
+                   • CSS Animation Example<br>
+                   • Project: Interactive Website Layout
+               </p>
+            </div>
+        </div>
+    </div>
+    <div class="syllabus-item">
+        <h3 class="module-title">Module 4: Tailwind CSS</h3>
+        <div class="module-content">
+            <p class="para-breif"> 
+                • Utility-based styling<br>
+                • Project: Dashboard UI with Tailwind<br>
+                • ➡ Build a modern dashboard.<br>
+                 </p>
+        </div>
+    </div>
+    </div>
+    <div class="syllabus-item">
+        <h3 class="module-title">Module 5: JavaScript</h3>
+        <div class="module-content">
+            <p class="para-breif">
+             • Introduction to ES6<br>
+             • Let, Const, and Var<br>
+             • Template Literals<br>
+             • Arrow Functions<br>
+             • Default Parameters<br>
+             • Rest and Spread Operators<br>
+             • Destructuring Assignment<br>
+             • Enhanced Object Literals<br>
+             • Modules (Import & Export)<br>
+             • Promises & Async/Await<br>
+             • Classes and Inheritance<br>
+             • Symbols & Iterators<br>
+             • Generators<br>
+             • Set and Map<br>
+             • WeakSet and WeakMap<br>
+             • ES6 String & Number Methods<br>
+             • ES6 Array Methods (map, filter, reduce, etc.)<br>
+             • ES6 Object Methods (Object.assign, Object.entries, etc.)<br>
+             • New ES6 Features in JavaScript
+
+                </p>
+        </div>
+    </div>
+    </div>
+    <div class="syllabus-item">
+        <h3 class="module-title">Module 6: React 19 and Redux</h3>
+        <div class="module-content">
+            <p class="para-breif"> 
+               • Actions<br>
+               • New Hooks (useActionState, useFormStatus)<br>
+               • Improved Server Components<br>
+               • Enhanced Suspense for Data Fetching<br>
+               • Asset Loading<br>
+               • React Compiler for Optimized Performance<br>
+               • Streaming Improvements in SSR<br>
+               • Updates to useTransition<br>
+               • Redux RTX Query
+                 </p>
+        </div>
+    </div>
+    </div>
+    <div class="syllabus-item">
+        <h3 class="module-title">Module 7: Backend (Node.js, Express & MongoDB)</h3>
+        <div class="module-content">
+            <p class="para-breif"> 
+               • Introduction to Node.js & Express<br>
+               • Understanding Package Management (npm & yarn)<br>
+               • Creating an Express Server<br>
+               • Middleware in Express<br>
+               • Routing in Express<br>
+               • Handling Requests and Responses<br>
+               • Connecting to a Database (MongoDB)<br>
+               • RESTful API Development<br>
+               • Authentication & Authorization (JWT)<br>
+               • Error Handling & Logging<br>
+               • File Uploads & Handling Static Files<br>
+               • Performance Optimization & Caching<br>
+               • Deployment
+                 </p>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+        
+    
+   
+       <div class="payment-issues">
+        <marquee style="color: #9d1111;">If You're Facing Any Payment Issues, Call Me at <b>8925799269</b></marquee>
+    </div>
+</div>
+
+<script>
+    function showForm() {
+        document.getElementById('registrationForm').style.display = 'block';
+        document.getElementById('qrCode').style.display = 'none';
+    }
+
+    function showQRCode() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        if (name && email && phone) {
+            document.getElementById('qrCode').style.display = 'block';
+            document.getElementById('registrationForm').style.display = 'none';
+            alert('Please scan the QR code to complete your payment!');
+        } else {
+            alert('Please fill all the details correctly.');
+        }
+    }
+    function showQRCode() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const course = document.getElementById('course').value;
+
+    if (name && email && phone) {
+        const message = `Student Registration Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCourse: ${course}`;
+        const whatsappNumber = '+918925799269'; // your WhatsApp number here
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, '_blank'); // open WhatsApp in a new tab
+        document.getElementById('qrCode').style.display = 'block';
+        document.getElementById('registrationForm').style.display = 'none';
+        alert('Please scan the QR code to complete your payment!');
+    } else {
+        alert('Please fill all the details correctly.');
+    }
+}
+
+// Tab switching logic
+function showCourse(courseId) {
+    // Hide all courses
+    document.querySelectorAll(".course-content").forEach(course => {
+        course.classList.remove("active");
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll(".tab-button").forEach(button => {
+        button.classList.remove("active");
+    });
+
+    // Show selected course
+    document.getElementById(courseId).classList.add("active");
+
+    // Add active class to clicked button
+    event.target.classList.add("active");
+}
+
+// Expand/Collapse syllabus modules
+document.querySelectorAll(".module-title").forEach(item => {
+    item.addEventListener("click", function () {
+        let content = this.nextElementSibling;
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+    });
+});
+    
+</script>
+
+</body>
+</html>

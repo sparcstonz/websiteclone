@@ -1,0 +1,59 @@
+.navbar-nav li {
+    margin-right: 15px;
+    font-size: 15x;
+    font-weight: 500;
+}
+.headerbox{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.navbar-brand img {
+    width: 100px;
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+.header-icon {
+    width: 40px;
+    margin-right: 5px;
+}
+.menuactive{
+    color:rgb(0 139 120) !important;
+}
+.enquiry-btn{
+    
+    background: linear-gradient(2deg, rgba(2, 141, 152, 1) 10%, rgba(57, 224, 237, 1) 100%);
+border: 1px solid rgb(2, 141, 152) !important;
+font-size: 15x !important;
+font-weight: 500 !important;
+color:white !important;
+}
+.number-header{
+    font-size: 15x;
+font-weight: 500;
+}
+.header-menu{
+    background: white;
+    border-radius: 10px;
+}
+.navbar{
+    position: fixed !important;
+    width: 100% !important;
+    z-index:1000;
+}
+
+   @media only screen and (max-width: 768px) {
+            html,
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+           .contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.navbar-brand img {
+    width: 120px;
+}
+   }

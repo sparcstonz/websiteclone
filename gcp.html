@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration - Sparcstonz</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87ceeb;
+            margin: 0;
+            padding: 20px;
+        }
+        .box {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  h1 {
+    color: #B22222;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #8B0000;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h2 span {
+    color: orange;
+    font-weight: bold;
+  }
+
+  p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .pay-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .pay-btn:hover {
+    background-color: #004494;
+  }
+
+  .powered {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+  }
+
+  .powered b {
+    font-style: normal;
+  }
+   .course-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 5px solid #1e90ff; /* solid blue border */
+    background-image: linear-gradient(to bottom right, #ffffff, #e6f2ff); /* slight blueish gradient inside */
+}
+
+        h1, h2 {
+            color: #8B0000;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+       /* Styling the container of the pay button */
+.pay-button {
+    text-align: center; /* Centers the button and text */
+    margin: 20px 0; /* Adds some margin for spacing */
+    animation: fadeIn 1s ease-in-out; /* Animation for fade-in effect */
+}
+
+/* Keyframe animation for fading in the container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styling the pay now button */
+.pay-button button {
+    background-color: #1e90ff; /* Blue background */
+    color: white; /* White text */
+    padding: 12px 25px; /* Add padding for a better button size */
+    font-size: 18px; /* Font size of the button text */
+    border: none; /* Remove default button borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    transition: all 0.3s ease; /* Smooth transition for all effects */
+    transform: scale(1); /* Initial size of the button */
+}
+
+/* Hover effect for the pay now button */
+.pay-button button:hover {
+    background-color: #0b7dda; /* Darker blue when hovered */
+    transform: scale(1.1); /* Button scales up when hovered */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Animation for the "Powered by GPay QR" text */
+.payment-text {
+    font-size: 12px;
+    color: #555; /* Light grey color for text */
+    margin-top: 8px; /* Adds some space between the button and the text */
+    font-style: italic; /* Makes the text italic */
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out forwards; /* Fade-in effect for the text */
+    animation-delay: 1s; /* Delay for text appearance */
+}
+
+/* Keyframe animation for fading in the "Powered by GPay QR" text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+        .pay-button button {
+            padding: 15px 30px;
+            background-color: #175bb5;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pay-button button:hover {
+            background-color: #d7bebe;
+        }
+        .payment-issues {
+            margin-top: 30px;
+            color: rgb(83, 26, 26);
+            font-size: 16px;
+        }
+        .details-list {
+            text-align: left;
+            margin-top: 30px;
+        }
+        .details-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .details-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            padding-left: 25px;
+        }
+        .details-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: green;
+        }
+        .registration-form {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+       
+        .qr-code {
+            display: none;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            max-width: 300px;
+        }
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Tabs */
+.tab-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    background: #555;
+}
+
+/* Course Content */
+.course-content {
+    display: none;
+}
+
+.course-content.active {
+    display: block;
+}
+
+/* Syllabus Items */
+.syllabus-item {
+    background: white;
+    margin: 10px auto;
+    padding: 15px;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.para-breif
+{
+    text-align:justify;
+}
+
+
+.module-title {
+    margin: 0;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.module-title:hover {
+    background-color: #555;
+}
+
+.module-content {
+    display: none;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grid-item {
+    background-color: #f0f8ff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #1e90ff;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.grid-item:hover {
+    background-color: #d0e7ff;
+    transform: translateY(-5px);
+}
+
+
+.glitter-text {
+    position: relative;
+    color: #ff6600;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.glitter-text::before,
+.glitter-text::after {
+    content: '✨';
+    position: absolute;
+    font-size: 18px;
+    opacity: 0;
+    animation: glitter 2s infinite;
+}
+
+.glitter-text::before {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.glitter-text::after {
+    bottom: 0;
+    right: 0;
+    animation-delay: 1s;
+}
+
+@keyframes glitter {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.2) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5) rotate(90deg);
+    }
+}
+h1,h2,p{
+    text-align: center;
+}
+.qr-code
+{
+    text-align: center;
+}
+
+.registration-form {
+    width: 400px; /* Reduced width */
+    margin: 30px auto; /* Centered horizontally */
+    padding: 20px;
+    background-color: #b3e5fc; /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registration-form h2 {
+    color: brown;
+    margin-bottom: 20px;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+
+<div class="intro">
+    <h1>New Batch Starts Soon...</h1>
+    <h2>To Join Our Sparcstonz <span class="glitter-text">Google Cloud Platform (GCP)</span></h2>
+
+
+    <p>Register Your Class by Making a Payment Given in the Below Link</p>
+
+    <div class="pay-button">
+        <button onclick="showForm()">Pay Now</button>
+        <p class="payment-text">Powered by <b>GPay QR</b></p>
+    </div>
+    
+
+   <div class="registration-form" id="registrationForm">
+    <h2>Student Registration Form</h2>
+    <form id="studentForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="course" placeholder="Course Name">
+        
+        <div style="text-align: center;">
+            <button type="button" onclick="showQRCode()" style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 10px;">Proceed to Pay</button>
+        </div>
+    </form>
+</div>
+
+
+        </form>
+    </div>
+
+    <div class="qr-code" id="qrCode">
+        <h2>Scan & Pay via GPay</h2>
+        <img src="images/qr.jpg" alt="GPay QR Code">
+        <p>After Payment, Please send the ScreenShot To 8925799269</p>
+    </div>
+
+    <div class="details-list">
+        <h2>Special Features In Our Class</h2>
+        <div class="grid-container">
+            <div class="grid-item">Online Course</div>
+            <div class="grid-item">Live Sessions</div>
+            <div class="grid-item">30 Classes</div>
+            <div class="grid-item">1hr/Weekday Classes</div>
+            <div class="grid-item">2hr/Weekend Classes</div>
+            <div class="grid-item">Learn in Tamil</div>
+            <div class="grid-item">Flexible Timings</div>
+            <div class="grid-item">Certification Provided</div>
+            <div class="grid-item">Interview Training</div>
+            <div class="grid-item">Career Mentorship</div>
+            <div class="grid-item">Freelancing Mentorship</div>
+            <div class="grid-item">One-to-One Sessions</div>
+        </div>
+    </div>
+    <section id="syllabus">
+        <h2>Course Syllabus</h2>
+    
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+            <button class="tab-button active" onclick="showCourse('Azure')">GOOGLE CLOUD PLATFORM SYLLABUS(Total Duration-30hrs)</button>
+           
+    
+        <!-- AWS Syllabus -->
+        <div class="course-content active" id="aws">
+            <div class="syllabus-item">
+                <h3 class="module-title">Module 1: Setting up a cloud solution environment. (Duration-3hrs)</h3>
+                <div class="module-content">
+                    <p class="para-breif">
+                       1.1 Setting up cloud projects and accounts.<br>
+                             ● creating a resource hierarchy<br>
+                             ● Applying organizational policies to the resource hierarchy<br>
+                             ● Granting members IAM roles within a project<br>
+                             ● Managing users and groups in Cloud Identity (manually and automated)<br>
+                             ● Enabling APIs within projects<br>
+                             ● Provisioning and setting up products in Google Cloud Observability<br>
+                             ● assessing quotas and requesting increases<br>
+                     1.2 Managing billing configuration.<br>
+                            ● creating one or more billing accounts<br>
+                            ● Linking projects to a billing account<br>
+                            ● Establishing billing budgets and alerts<br>
+                            ● setting up billing exports
+                    </p>
+                </div>
+                
+            </div>
+            <div class="syllabus-item">
+                <h3 class="module-title">Module 2: Planning and configuring a cloud solution (Duration-5hrs)</h3>
+                <div class="module-content">
+                    <p class="para-breif"> 
+                       2.1 Planning and configuring compute resources.<br>
+                      ● selecting appropriate compute choices for a given workload (e.g., Compute Engine, Google Kubernetes Engine, Cloud Run, Cloud Functions)<br>
+                      ● Using Spot VM instances and custom machine types as appropriate<br>
+                      2.2 Planning and configuring data storage options.<br>
+                     ● Product choice (e.g., Cloud SQL, BigQuery, Firestore, Spanner, Bigtable)<br>
+                     ● choosing storage options (e.g., zonal Persistent Disk, regional Persistent Disk, Standard,Nearline, Coldline, Archive).<br>
+                     2.3 Planning and configuring network resources.<br>
+                    ● Load balancing<br>
+                    ● Availability of resource locations in a network<br>
+                    ● Network Service Tiers
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="syllabus-item">
+            <h3 class="module-title">Module 3: Deploying and implementing a cloud solution (Duration-8hrs)</h3>
+            <div class="module-content">
+                <p class="para-breif">  
+                   3.1 Deploying and implementing Compute Engine resources<br>
+                      ● Launching a compute instance (e.g., assign disks, availability policy, SSH keys)<br>
+                      ● Creating an autoscaled managed instance group by using an instance template<br>
+                      ● Configuring OS Login<br>
+                      ● Configuring VM Manager<br>
+                  3.2 Deploying and implementing Google Kubernetes Engine resources<br>
+                     ● Installing and configuring the command line interface (CLI) for Kubernetes (kubectl)<br>
+                     ● deploying a Google Kubernetes Engine cluster with different configurations (e.g., Autopilot, regional clusters, private clusters, GKE Enterprise)<br>
+                     ● deploying a containerized application to Google Kubernetes Engine<br>
+                 3.3 Deploying and implementing Cloud Run and Cloud Functions resources<br>
+                     ● Deploying an application<br>
+                     ● Deploying an application for receiving Google Cloud events (e.g., Pub/Sub events, Cloud Storage object change notification events, Eventarc)<br>
+                     ● Determining where to deploy an application by using Cloud Run (fully managed), Cloud Run for Anthos, or Cloud Functions<br>
+                 3.4 Deploying and implementing data solutions<br>
+                     ● Deploying data products (e.g., Cloud SQL, Firestore, BigQuery, Spanner, Pub/Sub, Dataflow, Cloud Storage, AlloyDB)<br>
+                     ● Loading data (e.g., command line upload, load data from Cloud Storage, Storage Transfer Service)<br>
+                 3.5 Deploying and implementing networking resources.<br>
+                     ● Creating a VPC with subnets (e.g., custom mode VPC, Shared VPC)<br>
+                     ● Creating ingress and egress firewall rules and policies (e.g., IP subnets, network tags,<br>
+                       service accounts)<br>
+                     ● Peering external networks (e.g., Cloud VPN, VPC Network Peering)<br>
+                  3.6 Implementing resources through infrastructure as code.<br>
+                    ● Infrastructure as code tooling (e.g., Cloud Foundation Toolkit, Cong Connector,Terraform, Helm)
+               </p>
+            </div>
+        </div>
+    </div>
+    <div class="syllabus-item">
+        <h3 class="module-title">Module 4: Ensuring successful operation of a cloud solution (Duration-10hrs)</h3>
+        <div class="module-content">
+            <p class="para-breif"> 
+                4.1 Managing Compute Engine resources.<br>
+                     ● Remotely connecting to the instance<br>
+                     ● Viewing current running VM inventory (e.g., instance IDs, details)<br>
+                     ● Working with snapshots (e.g., create a snapshot from a VM, view snapshots, delete a snapshot, schedule a snapshot)<br>
+                     ● Working with images (e.g., create an image from a VM or a snapshot, view images, delete an image)<br>
+                4.2 Managing Google Kubernetes Engine resources.<br>
+                     ● Viewing current running cluster inventory (e.g., nodes, Pods, Services)<br>
+                     ● Configuring Google Kubernetes Engine to access Artifact Registry<br>
+                     ● Working with node pools (e.g., add, edit, or remove a node pool)<br>
+                     ● Working with Kubernetes resources (e.g., Pods, Services, Statefulsets)<br>
+                     ● Managing Horizontal and Vertical autoscaling configurations<br>
+               4.3 Managing Cloud Run resources.<br>
+                     ● deploying new versions of an application<br>
+                     ● Adjusting application trac spliing parameters<br>
+                     ● Setting scaling parameters for autoscaling instances<br>
+              4.4 Managing storage and database solutions<br>
+                     ● Managing and securing objects in Cloud Storage buckets<br>
+                     ● setting object lifecycle management policies for Cloud Storage buckets<br>
+                     ● Executing queries to retrieve data from data instances (e.g., Cloud SQL, BigQuery, Spanner, Firestore, AlloyDB)<br>
+                     ● Estimating costs of data storage resources<br>
+                     ● Backing up and restoring database instances (e.g., Cloud SQL, Firestore)<br>
+                     ● Reviewing job status (e.g., Dataow, BigQuery)<br>
+            4.5 Managing networking resources.<br>
+                     ● Adding a subnet to an existing VPC<br>
+                     ● Expanding a subnet to have more IP addresses<br>
+                     ● Reserving static external or internal IP addresses<br>
+                     ● Working with Cloud DNS and Cloud NAT<br>
+            4.6 Monitoring and logging.<br>
+                    ● Creating Cloud Monitoring alerts based on resource metrics<br>
+                    ● Creating and ingesting Cloud Monitoring custom metrics (e.g., from applications or logs)<br>
+                    ● Exporting logs to external systems (e.g., on-premises, BigQuery)<br>
+                    ● Configuring log buckets, log analytics, and log routers<br>
+                    ● Viewing and altering logs in Cloud Logging<br>
+                    ● Viewing specific log message details in Cloud Logging<br>
+                    ● Using cloud diagnostics to research an application issue<br>
+                    ● Viewing Google Cloud status<br>
+                    ● Configuring and deploying Ops Agent<br>
+                    ● Deploying Managed Service for Prometheus<br>
+                    ● Configuring audit logs<br>
+
+
+                 </p>
+        </div>
+    </div>
+    </div>
+    <div class="syllabus-item">
+        <h3 class="module-title">Module 5: Configuring access and security (Duration-4hrs)</h3>
+        <div class="module-content">
+            <p class="para-breif">
+              5.1 Managing Identity and Access Management (IAM).<br>
+                 ● Viewing and creating IAM policies<br>
+                 ● managing the various role types and defining custom IAM roles (e.g., basic, predefined, custom)<br>
+             5.2 Managing service accounts.<br>
+                 ● creating service accounts<br>
+                 ● Using service accounts in IAM policies with minimum permissions<br>
+                 ● Assigning service accounts to resources<br>
+                 ● Managing IAM of a service account<br>
+                 ● Managing service account impersonation<br>
+                 ● Creating and managing short-lived service account credentials<br>
+
+                </p>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+    
+        
+    
+   
+       <div class="payment-issues">
+        <marquee style="color: #9d1111;">If You're Facing Any Payment Issues, Call Me at <b>8925799269</b></marquee>
+    </div>
+</div>
+
+<script>
+    function showForm() {
+        document.getElementById('registrationForm').style.display = 'block';
+        document.getElementById('qrCode').style.display = 'none';
+    }
+
+    function showQRCode() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        if (name && email && phone) {
+            document.getElementById('qrCode').style.display = 'block';
+            document.getElementById('registrationForm').style.display = 'none';
+            alert('Please scan the QR code to complete your payment!');
+        } else {
+            alert('Please fill all the details correctly.');
+        }
+    }
+    function showQRCode() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const course = document.getElementById('course').value;
+
+    if (name && email && phone) {
+        const message = `Student Registration Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCourse: ${course}`;
+        const whatsappNumber = '+918925799269'; // your WhatsApp number here
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, '_blank'); // open WhatsApp in a new tab
+        document.getElementById('qrCode').style.display = 'block';
+        document.getElementById('registrationForm').style.display = 'none';
+        alert('Please scan the QR code to complete your payment!');
+    } else {
+        alert('Please fill all the details correctly.');
+    }
+}
+
+// Tab switching logic
+function showCourse(courseId) {
+    // Hide all courses
+    document.querySelectorAll(".course-content").forEach(course => {
+        course.classList.remove("active");
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll(".tab-button").forEach(button => {
+        button.classList.remove("active");
+    });
+
+    // Show selected course
+    document.getElementById(courseId).classList.add("active");
+
+    // Add active class to clicked button
+    event.target.classList.add("active");
+}
+
+// Expand/Collapse syllabus modules
+document.querySelectorAll(".module-title").forEach(item => {
+    item.addEventListener("click", function () {
+        let content = this.nextElementSibling;
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+    });
+});
+    
+</script>
+
+</body>
+</html>
